@@ -1,0 +1,24 @@
+package Ch05;
+// ppt 33p super 키워드로 슈퍼 클래스의 멤버 접근 
+class SuperObject {
+	protected String name;
+	public void paint() {
+		draw();
+	}
+	public void draw() {
+		System.out.println(name);
+	}
+}
+public class SubObject extends SuperObject{
+	protected String name;
+	public void draw() {
+		name = "Sub";
+		super.name = "Super";
+		super.draw();
+		System.out.println(name);
+	}
+	public static void main(String[] args) {
+		SuperObject b = new SubObject();
+		b.paint();
+	}
+}
